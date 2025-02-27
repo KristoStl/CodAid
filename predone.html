@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodAid - Predone Lua Code</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header, footer {
+            background-color: #1e1e1e;
+            padding: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+        }
+        .code-box {
+            background-color: #1e1e1e;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            position: relative;
+        }
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        .copy-button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Predone Lua Code</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="basic.html">Basic Code</a></li>
+                <li><a href="advanced.html">Advanced Code</a></li>
+                <li><a href="Character.html">Character Setting</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Ready-to-Use Lua Code for Roblox</h2>
+            <p>Here are some fully functional scripts you can use directly in your game.</p>
+            
+            <h3>Crouch Script</h3>
+            <div class="code-box">
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                <pre><code>local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:FindFirstChild("Humanoid")
+
+local function toggleCrouch()
+    if humanoid.WalkSpeed == 16 then
+        humanoid.WalkSpeed = 8
+    else
+        humanoid.WalkSpeed = 16
+    end
+end
+
+player.InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.LeftControl then
+        toggleCrouch()
+    end
+end)</code></pre>
+            </div>
+            <h3>Sprint Script</h3>
+            <div class="code-box">
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                <pre><code>local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:FindFirstChild("Humanoid")
+
+local function toggleSprint()
+    if humanoid.WalkSpeed == 16 then
+        humanoid.WalkSpeed = 30
+    else
+        humanoid.WalkSpeed = 16
+    end
+end
+
+player.InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.LeftShift then
+        toggleSprint()
+end
+end)</code></pre>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 CodAid - Created by Kristopher St-Laurent</p>
+    </footer>
+    <script>
+        function copyCode(button) {
+            const codeBlock = button.nextElementSibling.textContent;
+            navigator.clipboard.writeText(codeBlock).then(() => {
+                button.textContent = "Copied!";
+                setTimeout(() => button.textContent = "Copy", 2000);
+            });
+        }
+    </script>
+</body>
+</html>

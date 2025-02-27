@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodAid - Advanced Lua Code</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header, footer {
+            background-color: #1e1e1e;
+            padding: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+        }
+        .code-box {
+            background-color: #1e1e1e;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            position: relative;
+        }
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        .copy-button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Advanced Lua Code</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="basic.html">Basic Code</a></li>
+                <li><a href="Character.html">Character Setting</a></li>
+                <li><a href="predone.html">Predone Code</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Advanced Lua Code for Roblox</h2>
+            <p>Here are some more complex Lua scripts to enhance your Roblox game.</p>
+            
+            <h3>Using Remote Events</h3>
+            <div class="code-box">
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                <pre><code>local event = Instance.new("RemoteEvent")
+event.Name = "MyEvent"
+event.Parent = game.ReplicatedStorage
+
+event.OnServerEvent:Connect(function(player, message)
+    print(player.Name .. " says: " .. message)
+end)</code></pre>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 CodAid - Created by Kristopher St-Laurent</p>
+    </footer>
+</body>
+</html>
